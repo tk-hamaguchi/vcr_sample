@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.4.1'
+
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -28,6 +30,12 @@ gem 'rack-cors'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  gem 'rspec-rails',      '~> 3.5.2'
+  gem 'cucumber-rails',   '~> 1.4.0', require: false
+  gem 'vcr',              '~> 3.0.3'
+  gem 'database_cleaner', '~> 1.5.3'
+  gem 'webmock',          '~> 3.0.1'
 end
 
 group :development do
